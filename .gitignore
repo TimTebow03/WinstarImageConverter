@@ -1,0 +1,4 @@
+inputfolder/*
+!inputfolder/.gitignore
+outputfolder/*
+!outputfolder/.gitignore
