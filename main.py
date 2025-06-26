@@ -20,11 +20,12 @@ def ImageToByteArray(image_path):
         return None
     
 imageName = sys.argv[1]
-image_path = Path(Rf"C:\Users\4Matt\Documents\AsepriteExports\{imageName}.png")
+#image_path = Path(Rf"C:\Users\4Matt\Documents\AsepriteExports\{imageName}.png")
+image_path = Path(Rf"InputFolder\{imageName}.png")
 bit_array = ImageToByteArray(image_path)
 
 if bit_array is not None:
-    np.savetxt("output.txt", bit_array, fmt="%d", delimiter="")
+    np.savetxt(Rf"OneBitOutput\{imageName}_1_bit.txt", bit_array, fmt="%d", delimiter="")
     valCounter = 0
     hexBox = []
     for z in range(4):
@@ -44,7 +45,7 @@ if bit_array is not None:
 
     hexBox = ["0x" + val[2:].upper() for val in hexBox]
     
-with open(f"{imageName}_Hex.txt", "w") as f:
+with open(Rf"OutputFolder\{imageName}_Hex.txt", "w") as f:
     for i in range(0, len(hexBox), 8):
         line_items = hexBox[i:i+8]
         line = ",".join(line_items)
