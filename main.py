@@ -20,7 +20,6 @@ def ImageToByteArray(image_path):
         return None
     
 imageName = sys.argv[1]
-#image_path = Path(Rf"C:\Users\4Matt\Documents\AsepriteExports\{imageName}.png")
 image_path = Path(Rf"InputFolder\{imageName}.png")
 bit_array = ImageToByteArray(image_path)
 
